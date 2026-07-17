@@ -14,7 +14,10 @@
 
 **Plugins for ros2_unbag topic export with the OpenADS interfaces**
 
-This repository provides a dockerized [ros2_unbag](https://github.com/ika-rwth-aachen/ros2_unbag) — a high-performance ROS 2 CLI/GUI tool for exporting topics from `.db3` or `.mcap` bag files — extended with custom export routines and processors for OpenADS message types, e.g., `perception_msgs/msg/ObjectList` and Cloudini-compressed point clouds. For the natively supported topics, see the upstream [Export Routines](https://github.com/ika-rwth-aachen/ros2_unbag/blob/main/docs/EXPORT_ROUTINES.md) documentation; see [Documentation](#-documentation) for the OpenADS-specific routines and processors added by this repository.
+<img src="https://raw.githubusercontent.com/ika-rwth-aachen/ros2_unbag/refs/heads/main/qt_resources/assets/badge.svg" align="right" height="120" alt="ros2_unbag_plugins logo">
+<p align="justify">
+This repository provides a dockerized <a href="https://github.com/ika-rwth-aachen/ros2_unbag">ros2_unbag</a> — a high-performance ROS 2 CLI/GUI tool for exporting topics from <code>.db3</code> or <code>.mcap</code> bag files — extended with custom export routines and processors for OpenADS message types, e.g., <code>perception_msgs/msg/ObjectList</code> and Cloudini-compressed point clouds. For the natively supported topics, see the upstream <a href="https://github.com/ika-rwth-aachen/ros2_unbag/blob/main/docs/EXPORT_ROUTINES.md">Export Routines</a> documentation; see <a href="#-documentation">Documentation</a> for the OpenADS-specific routines and processors added by this repository.
+</p>
 
 <p align="center">
   <strong>🚀 <a href="#-quick-start">Quick Start</a></strong> • <strong>💻 <a href="#-development">Development</a></strong> • <strong>📝 <a href="#-documentation">Documentation</a></strong>
