@@ -1,0 +1,9 @@
+include:
+  - remote: https://raw.githubusercontent.com/ika-rwth-aachen/docker-ros/main/.gitlab-ci/docker-ros.yml
+
+variables:
+  TARGET: run
+  BASE_IMAGE: rwthika/ros2:jazzy
+  COMMAND: ros2 unbag
+  ADDITIONAL_FILES_DIR: custom
+  ENABLE_SLIM: false

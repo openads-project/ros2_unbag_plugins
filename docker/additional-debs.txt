@@ -1,0 +1,9 @@
+libxcb-cursor0
+libxcb-shape0
+libxcb-icccm4
+libxcb-keysyms1
+libxkbcommon-x11-0
+ros-${ROS_DISTRO}-tf-transformations
+ros-${ROS_DISTRO}-geometry-msgs
+liblz4-1
+libzstd1

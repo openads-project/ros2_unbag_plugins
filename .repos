@@ -1,0 +1,17 @@
+repositories:
+    perception_interfaces:
+        type: git
+        url: https://github.com/ika-rwth-aachen/perception_interfaces.git
+        version: main
+    planning_interfaces:
+        type: git
+        url: https://github.com/ika-rwth-aachen/planning_interfaces.git
+        version: main  
+    etsi_its_messages:
+        type: git
+        url: https://github.com/ika-rwth-aachen/etsi_its_messages
+        version: main
+    cloudini:
+        type: git
+        url: https://github.com/facontidavide/cloudini.git
+        version: 0.6.1
