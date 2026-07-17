@@ -90,4 +90,8 @@ Development and maintenance of this repository are supported by the following pr
 
 | Project | Funding Institution | Grant Number |
 | --- | --- | --- |
-| 4-CAD | Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) | 503852364 |
+| 4-CAD | 🇩🇪 Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) | 503852364 |
+
+<p>
+  <img src="https://www.fz-juelich.de/en/jsc/images/newsletter/dfg-logo/@@images/image-400-5f654fc8bb836a0c010a9410208a0d9c.png" height=70>
+</p>
