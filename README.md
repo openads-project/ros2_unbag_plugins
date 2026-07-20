@@ -30,7 +30,8 @@ This repository provides a dockerized <a href="https://github.com/ika-rwth-aache
 
 ## 🚀 Quick Start
 
-1. Launch the [`docker/compose/docker-compose.yml`](docker/compose/docker-compose.yml) setup. This starts `ros2 unbag` with the OpenADS routines and processors installed, mounting a local bag directory into the container:
+### Dockerized Setup
+1. Launch the [`docker/compose/docker-compose.yml`](docker/compose/docker-compose.yml) setup. This starts the image with the preinstalled OpenADS interfaces, routines, and processors, mounting a local bag directory into the container:
 
     ```bash
     cd docker/compose
@@ -51,6 +52,13 @@ This repository provides a dockerized <a href="https://github.com/ika-rwth-aache
     docker compose down
     xhost -local:
     ```
+### Direct Installation
+Docker is optional. If `ros2_unbag` and the required OpenADS ROS 2 interfaces are already installed in your environment, install the plugins directly from this checkout:
+
+```bash
+for routine in plugins/routines/*.py; do ros2 unbag --install-routine "$routine"; done
+for processor in plugins/processors/*.py; do ros2 unbag --install-processor "$processor"; done
+```
 
 ## 💻 Development
 
@@ -76,7 +84,7 @@ This repository provides a dockerized <a href="https://github.com/ika-rwth-aache
 
 ### Add Routines & Processors
 
-Place new Python-based export routines in [`custom/routines/`](custom/routines) and new processors in [`custom/processors/`](custom/processors). They are installed automatically during the image build via `ros2 unbag --install-routine` and `ros2 unbag --install-processor`, see [`docker/custom.sh`](docker/custom.sh).
+Place new Python-based export routines in [`plugins/routines/`](plugins/routines) and new processors in [`plugins/processors/`](plugins/processors). They are installed automatically during the image build via `ros2 unbag --install-routine` and `ros2 unbag --install-processor`, see [`docker/custom.sh`](docker/custom.sh).
 
 
 ## 📝 Documentation
