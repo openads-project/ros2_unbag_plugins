@@ -1,0 +1,17 @@
+name: consistency
+
+on:
+  push:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 4 * * 1"
+
+jobs:
+  consistency:
+    uses: openads-project/openads-dev-environment/.github/workflows/consistency.yml@main
+    with:
+      # This repository has no ROS 2 colcon package at its root (it only installs Python
+      # routines/processors into a base ros2_unbag image), so the README/compose generators
+      # have nothing to derive package metadata from and cannot apply here.
+      skip-checks: readme_generator_is_idempotent,compose_generator_is_idempotent
+    secrets: inherit
