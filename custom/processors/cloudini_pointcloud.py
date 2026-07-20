@@ -1,5 +1,5 @@
-## Copyright Institute for Automotive Engineering (ika), RWTH Aachen University
-## SPDX-License-Identifier: Apache-2.0
+# Copyright Institute for Automotive Engineering (ika), RWTH Aachen University
+# SPDX-License-Identifier: Apache-2.0
 
 from ros2_unbag.core.processors.base import Processor
 from ros2_unbag.core.processors import pointcloud as _pointcloud

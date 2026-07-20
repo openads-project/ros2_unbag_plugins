@@ -1,5 +1,5 @@
-## Copyright Institute for Automotive Engineering (ika), RWTH Aachen University
-## SPDX-License-Identifier: Apache-2.0
+# Copyright Institute for Automotive Engineering (ika), RWTH Aachen University
+# SPDX-License-Identifier: Apache-2.0
 
 import csv
 from geometry_msgs.msg import Quaternion
