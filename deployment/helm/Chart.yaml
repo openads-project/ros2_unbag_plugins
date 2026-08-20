@@ -1,0 +1,9 @@
+apiVersion: v2
+name: ros2-unbag
+version: 1.0.0
+appVersion: 1.0.0
+description: Plugins for ros2_unbag topic export with the OpenADS interfaces
+dependencies:
+  - repository: oci://ghcr.io/openads-project/openads-helm
+    name: openadservice
+    version: 1.0.0

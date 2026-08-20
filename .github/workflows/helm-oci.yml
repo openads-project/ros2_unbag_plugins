@@ -13,7 +13,5 @@ on:
 
 jobs:
   helm-oci:
-    # This repository only installs ros2_unbag Python plugins and has no Helm chart to publish.
-    if: ${{ false }}
     uses: openads-project/openads-dev-environment/.github/workflows/helm-oci.yml@main
     secrets: inherit

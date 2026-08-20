@@ -10,6 +10,7 @@
   <a href="https://github.com/openads-project/ros2_unbag_plugins/actions/workflows/compose-oci.yml"><img src="https://github.com/openads-project/ros2_unbag_plugins/actions/workflows/compose-oci.yml/badge.svg"/></a>
   <a href="https://openads-project.github.io/ros2_unbag_plugins"><img src="https://github.com/openads-project/ros2_unbag_plugins/actions/workflows/docs.yml/badge.svg"/></a>
   <a href="https://github.com/openads-project/ros2_unbag_plugins/actions/workflows/consistency.yml"><img src="https://github.com/openads-project/ros2_unbag_plugins/actions/workflows/consistency.yml/badge.svg"/></a>
+  <a href="https://github.com/openads-project/ros2_unbag_plugins/actions/workflows/helm-oci.yml"><img src="https://github.com/openads-project/ros2_unbag_plugins/actions/workflows/helm-oci.yml/badge.svg"/></a>
 </p>
 
 **Plugins for ros2_unbag topic export with the OpenADS interfaces**
