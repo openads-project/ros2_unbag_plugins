@@ -1,0 +1,16 @@
+openadservice:
+  name: ros2-unbag
+  image: ghcr.io/openads-project/ros2_unbag_plugins:v1.0.0
+  env:
+    QT_X11_NO_MITSHM: 1
+  x11Display: :0
+  x11XauthorityFile: /tmp/.X11-unix
+  volumes:
+    # Place bag files in this directory on each Kubernetes node, or override
+    # the host path during installation.
+    - mountPath: /bags
+      hostPath: /bags
+  args:
+    - /bin/bash
+    - -ic
+    - cd /bags && ros2 unbag

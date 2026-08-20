@@ -1,7 +1,7 @@
 # ros2_unbag_plugins
 
 <p align="center">
-  <a href="https://github.com/openads-project"><img src="https://img.shields.io/badge/OpenADS-f5ff01"/></a>
+  <a href="https://openads-project.github.io"><img src="https://img.shields.io/badge/OpenADS-45ccc6"/></a>
   <a href="https://www.ros.org"><img src="https://img.shields.io/badge/ROS 2-jazzy-22314e"/></a>
   <a href="https://github.com/openads-project/ros2_unbag_plugins/releases/latest"><img src="https://img.shields.io/github/v/release/openads-project/ros2_unbag_plugins"/></a>
   <a href="https://github.com/openads-project/ros2_unbag_plugins/blob/main/LICENSE"><img src="https://img.shields.io/github/license/openads-project/ros2_unbag_plugins"/></a>
@@ -10,13 +10,14 @@
   <a href="https://github.com/openads-project/ros2_unbag_plugins/actions/workflows/compose-oci.yml"><img src="https://github.com/openads-project/ros2_unbag_plugins/actions/workflows/compose-oci.yml/badge.svg"/></a>
   <a href="https://openads-project.github.io/ros2_unbag_plugins"><img src="https://github.com/openads-project/ros2_unbag_plugins/actions/workflows/docs.yml/badge.svg"/></a>
   <a href="https://github.com/openads-project/ros2_unbag_plugins/actions/workflows/consistency.yml"><img src="https://github.com/openads-project/ros2_unbag_plugins/actions/workflows/consistency.yml/badge.svg"/></a>
+  <a href="https://github.com/openads-project/ros2_unbag_plugins/actions/workflows/helm-oci.yml"><img src="https://github.com/openads-project/ros2_unbag_plugins/actions/workflows/helm-oci.yml/badge.svg"/></a>
 </p>
 
 **Plugins for ros2_unbag topic export with the OpenADS interfaces**
 
 <img src="https://raw.githubusercontent.com/ika-rwth-aachen/ros2_unbag/refs/heads/main/qt_resources/assets/badge.svg" align="right" height="120" alt="ros2_unbag_plugins logo">
 <p align="justify">
-This repository provides a dockerized <a href="https://github.com/ika-rwth-aachen/ros2_unbag">ros2_unbag</a> — a high-performance ROS 2 CLI/GUI tool for exporting topics from <code>.db3</code> or <code>.mcap</code> bag files — extended with custom export routines and processors for OpenADS message types, e.g., <code>perception_msgs/msg/ObjectList</code> and Cloudini-compressed point clouds. For the natively supported topics, see the upstream <a href="https://github.com/ika-rwth-aachen/ros2_unbag/blob/main/docs/EXPORT_ROUTINES.md">Export Routines</a> documentation; see <a href="#-documentation">Documentation</a> for the OpenADS-specific routines and processors added by this repository.
+This repository extends <a href="https://github.com/ika-rwth-aachen/ros2_unbag">ros2_unbag</a> — a high-performance ROS 2 CLI/GUI for exporting topics from <code>.db3</code> and <code>.mcap</code> bag files — with routines and processors for OpenADS data. It supports exporting <code>perception_msgs/msg/ObjectList</code> messages in the HEXAMOTION format and Cloudini-compressed point clouds, as well as processors for tasks such as object-list transformations, Cloudini point-cloud decompression, and point-field colormaps. The repository also produces a Docker image with <code>ros2_unbag</code> and the required OpenADS ROS 2 interfaces preinstalled; alternatively, the plugins can be installed into an existing <code>ros2_unbag</code> environment. For natively supported topics, see the upstream <a href="https://github.com/ika-rwth-aachen/ros2_unbag/blob/main/docs/EXPORT_ROUTINES.md">Export Routines</a> documentation; see <a href="#-documentation">Documentation</a> for the OpenADS-specific additions.
 </p>
 
 <p align="center">
@@ -30,7 +31,8 @@ This repository provides a dockerized <a href="https://github.com/ika-rwth-aache
 
 ## 🚀 Quick Start
 
-1. Launch the [`docker/compose/docker-compose.yml`](docker/compose/docker-compose.yml) setup. This starts `ros2 unbag` with the OpenADS routines and processors installed, mounting a local bag directory into the container:
+### Dockerized Setup
+1. Launch the [`docker/compose/docker-compose.yml`](docker/compose/docker-compose.yml) setup. This starts the image with the preinstalled OpenADS interfaces, routines, and processors, mounting a local bag directory into the container:
 
     ```bash
     cd docker/compose
@@ -51,6 +53,13 @@ This repository provides a dockerized <a href="https://github.com/ika-rwth-aache
     docker compose down
     xhost -local:
     ```
+### Direct Installation
+Docker is optional. If `ros2_unbag` and the required OpenADS ROS 2 interfaces are already installed in your environment, install the plugins directly from this checkout:
+
+```bash
+for routine in plugins/routines/*.py; do ros2 unbag --install-routine "$routine"; done
+for processor in plugins/processors/*.py; do ros2 unbag --install-processor "$processor"; done
+```
 
 ## 💻 Development
 
@@ -76,7 +85,7 @@ This repository provides a dockerized <a href="https://github.com/ika-rwth-aache
 
 ### Add Routines & Processors
 
-Place new Python-based export routines in [`custom/routines/`](custom/routines) and new processors in [`custom/processors/`](custom/processors). They are installed automatically during the image build via `ros2 unbag --install-routine` and `ros2 unbag --install-processor`, see [`docker/custom.sh`](docker/custom.sh).
+Place new Python-based export routines in [`plugins/routines/`](plugins/routines) and new processors in [`plugins/processors/`](plugins/processors). They are installed automatically during the image build via `ros2 unbag --install-routine` and `ros2 unbag --install-processor`, see [`docker/custom.sh`](docker/custom.sh).
 
 
 ## 📝 Documentation

@@ -34,7 +34,7 @@ jobs:
           target: run
           base-image: rwthika/ros2:jazzy
           command: ros2 unbag
-          additional-files-dir: custom
+          additional-files-dir: plugins
           enable-slim: false
           enable-industrial-ci: false
           label-maintainer: Institute for Automotive Engineering (ika), RWTH Aachen University <opensource@ika.rwth-aachen.de>

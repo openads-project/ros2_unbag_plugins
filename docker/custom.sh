@@ -5,7 +5,7 @@ set -e
 source /opt/ros/${ROS_DISTRO}/setup.bash
 [ -f /ws/install/setup.bash ] && source /ws/install/setup.bash
 
-# Install custom routines and processors if provided
+# Install OpenADS routines and processors if provided
 shopt -s nullglob
 for routine in /docker-ros/additional-files/routines/*.py; do
   ros2 unbag --install-routine "$routine"
