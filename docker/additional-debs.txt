@@ -5,5 +5,6 @@ libxcb-keysyms1
 libxkbcommon-x11-0
 ros-${ROS_DISTRO}-tf-transformations
 ros-${ROS_DISTRO}-geometry-msgs
+ros-${ROS_DISTRO}-unbag
 liblz4-1
 libzstd1
