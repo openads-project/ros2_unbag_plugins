@@ -35,6 +35,8 @@ jobs:
           base-image: rwthika/ros2:jazzy
           command: ros2 unbag
           additional-files-dir: plugins
+          # Cloudini ships a Rolling-only CI .repos file; import only our root manifest.
+          enable-recursive-vcs-import: false
           enable-slim: false
           enable-industrial-ci: false
           label-maintainer: Institute for Automotive Engineering (ika), RWTH Aachen University <opensource@ika.rwth-aachen.de>

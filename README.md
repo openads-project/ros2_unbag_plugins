@@ -54,7 +54,20 @@ This repository extends <a href="https://github.com/ika-rwth-aachen/ros2_unbag">
     xhost -local:
     ```
 ### Direct Installation
-Docker is optional. If `ros2_unbag` and the required OpenADS ROS 2 interfaces are already installed in your environment, install the plugins directly from this checkout:
+With `ros2_unbag`, ROS 2 Jazzy, and the required OpenADS interfaces already
+installed, install the native decoder directly from this checkout:
+
+```bash
+python3 -m pip install .
+```
+
+Pip downloads and builds the Cloudini version pinned in `.repos` automatically.
+Building from source needs a C++20 compiler and Python headers (Ubuntu:
+`build-essential` and `python3-dev`);
+no additional colcon workspace or setup script is needed for the decoder.
+The usual ROS environment must still be sourced to run `ros2 unbag`.
+
+Install the Python routines and processors from this checkout:
 
 ```bash
 for routine in plugins/routines/*.py; do ros2 unbag --install-routine "$routine"; done
@@ -85,7 +98,7 @@ for processor in plugins/processors/*.py; do ros2 unbag --install-processor "$pr
 
 ### Add Routines & Processors
 
-Place new Python-based export routines in [`plugins/routines/`](plugins/routines) and new processors in [`plugins/processors/`](plugins/processors). They are installed automatically during the image build via `ros2 unbag --install-routine` and `ros2 unbag --install-processor`, see [`docker/custom.sh`](docker/custom.sh).
+Place new Python-based export routines in [`plugins/routines/`](plugins/routines) and new processors in [`plugins/processors/`](plugins/processors). The native Cloudini binding in `cloudini_bridge/` is built automatically by colcon. Python plugins are installed automatically during the image build via `ros2 unbag --install-routine` and `ros2 unbag --install-processor`, see [`docker/custom.sh`](docker/custom.sh).
 
 
 ## 📝 Documentation

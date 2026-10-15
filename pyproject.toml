@@ -1,0 +1,16 @@
+[build-system]
+requires = ["scikit-build-core>=0.10,<1", "pybind11>=2.11,<4", "PyYAML>=6"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "ros2-unbag-cloudini"
+version = "0.1.0"
+description = "Native upstream Cloudini decoder for ros2_unbag OpenADS plugins"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+
+[tool.scikit-build]
+cmake.source-dir = "cloudini_bridge"
+wheel.packages = []
+build.tool-args = ["-j2"]
+sdist.include = [".repos", "cloudini_bridge/**"]
