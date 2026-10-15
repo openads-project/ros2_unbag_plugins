@@ -8,3 +8,4 @@ ros-${ROS_DISTRO}-geometry-msgs
 ros-${ROS_DISTRO}-unbag
 liblz4-1
 libzstd1
+python3-matplotlib
