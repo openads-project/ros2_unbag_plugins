@@ -25,24 +25,35 @@
 var NAVTREE =
 [
   [ "ros2_unbag_plugins", "index.html", [
-    [ "🚀 Quick Start", "index.html#autotoc_md1", null ],
-    [ "💻 Development", "index.html#autotoc_md2", [
-      [ "Set up Development Environment", "index.html#autotoc_md3", null ],
-      [ "Add Routines & Processors", "index.html#autotoc_md4", null ]
+    [ "🚀 Quick Start", "index.html#autotoc_md1", [
+      [ "Dockerized Setup", "index.html#autotoc_md2", null ],
+      [ "Direct Installation", "index.html#autotoc_md3", null ]
     ] ],
-    [ "📝 Documentation", "index.html#autotoc_md5", null ],
-    [ "⚖️ Licensing", "index.html#autotoc_md6", null ],
-    [ "🙏 Acknowledgements", "index.html#autotoc_md7", null ],
+    [ "💻 Development", "index.html#autotoc_md4", [
+      [ "Set up Development Environment", "index.html#autotoc_md5", null ],
+      [ "Add Routines & Processors", "index.html#autotoc_md6", null ]
+    ] ],
+    [ "📝 Documentation", "index.html#autotoc_md7", null ],
+    [ "⚖️ Licensing", "index.html#autotoc_md8", null ],
+    [ "🙏 Acknowledgements", "index.html#autotoc_md9", null ],
     [ "Implementation Details", "md_docs_2IMPLEMENTATION.html", [
-      [ "Routines", "md_docs_2IMPLEMENTATION.html#autotoc_md9", null ],
-      [ "Processors", "md_docs_2IMPLEMENTATION.html#autotoc_md10", null ]
+      [ "Routines", "md_docs_2IMPLEMENTATION.html#autotoc_md11", null ],
+      [ "Processors", "md_docs_2IMPLEMENTATION.html#autotoc_md12", null ],
+      [ "Cloudini decoder", "md_docs_2IMPLEMENTATION.html#autotoc_md13", null ]
+    ] ],
+    [ "Files", "files.html", [
+      [ "File List", "files.html", "files_dup" ],
+      [ "File Members", "globals.html", [
+        [ "All", "globals.html", null ],
+        [ "Functions", "globals_func.html", null ]
+      ] ]
     ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"index.html"
+"decoder_8cpp.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
