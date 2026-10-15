@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>ros2_unbag_cloudini</name>
+  <version>0.1.0</version>
+  <description>Python binding to the upstream Cloudini ROS message decoder.</description>
+  <maintainer email="opensource@ika.rwth-aachen.de">Institute for Automotive Engineering (ika), RWTH Aachen University</maintainer>
+  <license>Apache-2.0</license>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>ament_cmake_python</buildtool_depend>
+  <build_depend>pybind11-dev</build_depend>
+  <depend>cloudini_lib</depend>
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>point_cloud_interfaces</exec_depend>
+  <test_depend>ament_cmake_pytest</test_depend>
+  <export><build_type>ament_cmake</build_type></export>
+</package>
