@@ -6,8 +6,10 @@
 
 namespace py = pybind11;
 
-// Test-only producer: exercise the decoder against upstream wire formats, rather
-// than hard-coding a second implementation or shipping large binary fixtures.
+/**
+ * @brief Expose the upstream encoder for generating test fixtures in each wire format.
+ * @param module Python module receiving the test-only encode function.
+ */
 PYBIND11_MODULE(_cloudini_test_encoder, module) {
   module.def("encode", [](const py::bytes& message, uint8_t version, bool lossy) {
     const std::string input = message;

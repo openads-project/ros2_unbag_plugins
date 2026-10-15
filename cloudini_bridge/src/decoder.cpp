@@ -6,6 +6,10 @@
 
 namespace py = pybind11;
 
+/**
+ * @brief Expose upstream Cloudini decoding of serialized ROS point clouds to Python.
+ * @param module Python module receiving the decode function.
+ */
 PYBIND11_MODULE(_ros2_unbag_cloudini, module) {
   module.doc() = "Decode Cloudini using the installed upstream library.";
   module.def("decode", [](const py::bytes& message) {
